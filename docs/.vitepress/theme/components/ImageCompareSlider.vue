@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { withBase } from 'vitepress'
 
 const props = withDefaults(defineProps<{
   imgBefore: string
@@ -10,6 +11,9 @@ const props = withDefaults(defineProps<{
   initialPosition: 50,
   width: 'auto'
 })
+
+const beforeSrc = withBase(props.imgBefore)
+const afterSrc = withBase(props.imgAfter)
 
 const container = ref<HTMLElement | null>(null)
 const position = ref(props.initialPosition)
@@ -72,11 +76,11 @@ onBeforeUnmount(() => {
     @touchstart="startDrag"
   >
     <div class="overlay after-layer" :style="{ clipPath: `inset(0 ${100 - position}% 0 0)` }">
-      <img class="overlay-image" :src="imgBefore" alt="before" draggable="false" />
+      <img class="overlay-image" :src="beforeSrc" alt="before" draggable="false" />
       <span class="label label-before">Before</span>
     </div>
     <div class="overlay before-layer" :style="{ clipPath: `inset(0 0 0 ${position}%)` }">
-      <img class="overlay-image" :src="imgAfter" alt="after" draggable="false" />
+      <img class="overlay-image" :src="afterSrc" alt="after" draggable="false" />
       <span class="label label-after">After</span>
     </div>
     <div class="divider" :style="{ left: position + '%' }">
