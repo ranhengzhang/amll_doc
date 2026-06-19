@@ -137,3 +137,18 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: Outline (右侧大纲)
+ * 标题过长时换行显示而非截断省略
+ * -------------------------------------------------------------------------- */
+
+.VPDocAsideOutline .outline-link {
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+.VPDocAsideOutline .outline-marker {
+  flex-shrink: 0;
+  margin-top: 0.4em;
+}
+
