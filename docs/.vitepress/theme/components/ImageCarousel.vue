@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { withBase } from 'vitepress'
 
 interface CarouselImage {
   src: string
@@ -22,6 +23,13 @@ const props = withDefaults(defineProps<{
 const current = ref(0)
 const container = ref<HTMLElement | null>(null)
 const isTransitioning = ref(false)
+
+const resolvedImages = computed(() =>
+  props.images.map(img => ({
+    src: withBase(img.src),
+    alt: img.alt
+  }))
+)
 let autoplayTimer: ReturnType<typeof setInterval> | null = null
 let transitionTimer: ReturnType<typeof setTimeout> | null = null
 
@@ -106,7 +114,7 @@ onBeforeUnmount(() => {
     @touchend="onTouchEnd"
   >
     <div class="carousel-track" :style="{ transform: `translateX(-${current * 100}%)` }">
-      <div v-for="(img, i) in images" :key="i" class="carousel-slide">
+      <div v-for="(img, i) in resolvedImages" :key="i" class="carousel-slide">
         <img :src="img.src" :alt="img.alt || `image-${i + 1}`" draggable="false" />
       </div>
     </div>
