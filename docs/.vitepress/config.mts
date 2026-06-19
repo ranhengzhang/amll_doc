@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/amll_doc/',
   markdown: {
     math: true
   },
@@ -13,6 +14,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'AMLL Player Plugins', link: '/amll-plugins/' },
+      { text: 'Aegisub Automation Scripts', link: '/aegisub-automation/' }
     ],
 
     sidebar: [
