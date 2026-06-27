@@ -14,7 +14,10 @@
 
 将 ASS 字幕转换为 Apple Music 风格的 TTML（Timed Text Markup Language）歌词格式。
 
-**下载链接：** [ass2ttml.lua](https://github.com/ranhengzhang/amll-ttml-db-raw-data/raw/refs/heads/main/aegisub/ass2ttml.lua)
+**下载链接：**
+
+- 兼容 Aegisub 3.2 版本：[ass2ttml-3.2.lua](https://github.com/ranhengzhang/amll-ttml-db-raw-data/raw/refs/heads/main/aegisub/ass2ttml-3.2.lua)
+- 兼容 Aegisub 3.4 版本：[ass2ttml-3.4.lua](https://github.com/ranhengzhang/amll-ttml-db-raw-data/raw/refs/heads/main/aegisub/ass2ttml-3.4.lua)
 
 ### ass2ttml.v2.lua — ASS 转 TTML（V2）
 
