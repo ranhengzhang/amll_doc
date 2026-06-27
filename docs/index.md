@@ -3,11 +3,20 @@ layout: home
 
 hero:
   name: "AMLL Project Document"
-  tagline: AMLL About 项目的使用手册聚集地
+  tagline: AMLL About 项目的使用手册集合
+  image:
+    src: /snowman.png
+    alt: Snowman
 
 features:
   - title: AMLL Plugins
     details: 适用于 AMLL Player 的插件
     link: /amll-plugins
+  - title: Aegisub Automation Scripts
+    details: 适用于 Aegisub 的自动化脚本
+    link: /aegisub-automation
+  - title: AMLL C++ Qt 项目
+    details: 适用于 TTML 歌词格式的 C++ Qt 项目
+    link: /amll-cpp-qt
 ---
 
